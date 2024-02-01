@@ -1,54 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
-  margin: 0px;
+  padding: 120px 100px;
   background-color: hsl(233, 47%, 7%);
+  color: hsl(0, 0%, 100%);
+  font-family: sans-serif;
 }
-.collection {
-  width: 70%;
-  margin: 50px auto;
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  position: relative;
-}
-.card {
-  color: white;
-  width: 350px;
-  border-radius: 10px;
-  padding: 10px 17px;
-  text-decoration: none;
-  font-size: 15px;
+#mobile-img {
+  display: none;
 }
 
-.product-container {
+#main-container {
   display: flex;
-  justify-content: space-around;
-}
-
-.product {
-  text-align: center;
-  padding: 20px;
-  margin: 10px;
-  flex: 1;
-}
-#card-1 {
   background-color: hsl(244, 38%, 16%);
+  border-radius: 10px;
 }
-.highlighted-word {
+.text {
+  width: 50%;
+  padding: 60px;
+}
+h1 {
+  margin-bottom: 30px;
+  font-size: 40px;
+}
+h1 span {
   color: hsl(277, 64%, 61%);
 }
 p {
+  margin-bottom: 65px;
   color: hsla(0, 0%, 100%, 0.75);
 }
-
-#card-2 {
-  padding-bottom: 50%;
-  position: relative;
+.stats {
+  display: flex;
+  font-size: 20px;
+  justify-content: space-between;
+  gap: 15px;
 }
-#positioning {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
+.stats span:first-child {
+  font-weight: bold;
+  display: block;
+  font-size: 26px;
+  color: white;
+}
+.image {
+  width: 50%;
+  background-image: url("./images/image-header-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.image img {
   height: 100%;
-  border-radius: 10px;
+}
+
+.overlay {
+  height: 100%;
+  background-color: hsla(277, 64%, 61%, 0.4);
+}
+@media (max-width: 700px) {
+  body {
+    padding: 100px 20px;
+  }
+  #main-container {
+    flex-direction: column-reverse;
+  }
+
+  .image {
+    width: unset;
+    height: 300px;
+    background-image: url("./images/image-header-mobile.jpg");
+  }
+  .image img {
+    width: 100%;
+  }
+  .text {
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+  }
+  .stats {
+    flex-direction: column;
+  }
 }
